@@ -1,19 +1,18 @@
-package com.lopputyo.lopputyo;
+package com.lopputyo.lopputyo.data;
 //Lisätään tarvittavat importit
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
-import com.lopputyo.lopputyo.PersonService;
-import com.lopputyo.lopputyo.CourseService;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//Määritetään Main-luokka
-public class Main {
-    public static void main(String[] args) {
+import com.lopputyo.lopputyo.service.CourseService;
+import com.lopputyo.lopputyo.service.PersonService;
+
+//Määritetään Main-luokka ja Spring Boot
+@SpringBootApplication
+public class LopputyoApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(LopputyoApplication.class, args);
+	
         //Määritetään muuttujat ja näkyvyys
         PersonService personService = new PersonService();
         CourseService courseService = new CourseService();
@@ -37,3 +36,5 @@ public class Main {
         courseService.addCourse(historyCourse);
     }
 }
+
+

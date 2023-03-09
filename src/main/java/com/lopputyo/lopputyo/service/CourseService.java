@@ -1,17 +1,12 @@
-package com.lopputyo.lopputyo;
+package com.lopputyo.lopputyo.service;
 
 //Lisätään tarvittavat importit
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.lopputyo.lopputyo.Course;
+import com.lopputyo.lopputyo.data.Course;
 
 @Service
 //Määritetään luokka CourseService
