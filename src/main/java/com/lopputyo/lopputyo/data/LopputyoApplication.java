@@ -16,14 +16,14 @@ public class LopputyoApplication {
         //Määritetään muuttujat ja näkyvyys
         PersonService personService = new PersonService();
         CourseService courseService = new CourseService();
-//Määritetään uudet henkilöt ja lisätään ne personServiceen
+//Määritetään uudet henkilöt ja lisätään ne personServiceen testikäyttöön
         Person Maija = new Person("Matti", 25, 1);
         Person Matti = new Person("Maija", 30, 2);
         Person Pasi = new Person("Pasi", 40, 3);
         personService.addPerson(Matti);
         personService.addPerson(Maija);
         personService.addPerson(Pasi);
-//Määritetään uudet kurssit ja lisätään ne courseServiceen
+//Määritetään uudet kurssit ja lisätään ne courseServiceen testikäyttöön
         Course mathCourse = new Course("Matematiikka");
         mathCourse.addStudent(Maija);
         courseService.addCourse(mathCourse);

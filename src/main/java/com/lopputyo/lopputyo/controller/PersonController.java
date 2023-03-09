@@ -7,7 +7,10 @@ import java.util.List;
 import com.lopputyo.lopputyo.data.Person;
 import com.lopputyo.lopputyo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,7 +26,13 @@ public class PersonController {
     @Autowired  
     private PersonService personService; 
 
-
+    @ExceptionHandler(value = { Exception.class })
+    public ResponseEntity<Object> handleException(Exception ex) {
+        //Määritetään virheen käsittely
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+        String errorMessage = "An unexpected error occurred";
+        return new ResponseEntity<>(errorMessage, status);
+    }
 
 
 
