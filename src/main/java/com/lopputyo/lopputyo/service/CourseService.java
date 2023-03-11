@@ -3,17 +3,13 @@ package com.lopputyo.lopputyo.service;
 //Lisätään tarvittavat importit
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import com.lopputyo.lopputyo.data.Course;
-
+//Määritetään luokka CourseService ja lisätään tarvittavat annotaatiot
 @Service
-//Määritetään luokka CourseService
 public class CourseService {
-//Määritetään muuttuja courses ja näkyvyys
     private List<Course> courses;
-//Määritetään konstruktori
+
     public CourseService() {
         this.courses = new ArrayList<>();
     }
@@ -28,8 +24,7 @@ public class CourseService {
                 return course;
             }
         }
-        //Palautetaan poikkeus
-        throw new CourseNotFoundException();
+        return null;
     }
 
     public void addCourse(Course course) {
@@ -51,9 +46,13 @@ public class CourseService {
             courses.remove(course);
         }
     }
-//Määritetään poikkeus CourseNotFoundException
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public class CourseNotFoundException extends RuntimeException {
-        private static final long serialVersionUID = 1L;
+    
+    public Course getCourseById(String id) {
+        for (Course course : courses) {
+            if (course.getName().equals(id)) {
+                return course;
+            }
+        }
+        return null;
     }
 }

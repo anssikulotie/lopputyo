@@ -30,7 +30,7 @@ public class CourseController {
 //Määritetään endpoint kurssin hakemiseksi ID:n perusteella
     @GetMapping("/courses/{id}")
     public ResponseEntity<Course> getCourseById(@PathVariable("id") String id) {
-        Course course = courseService.getCourseByName(id);
+        Course course = courseService.getCourseById(id);
         if (course != null) {
             return new ResponseEntity<>(course, HttpStatus.OK);
         } else {

@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
-// Määritetään luokka PersonController
+
+// Määritetään luokka PersonController ja lisätään tarvittavat annotaatiot
 @RestController
 public class PersonController {
-    // Lisätään tarvittavat annotaatiot
+
     @Autowired  
     private PersonService personService; 
 
@@ -58,7 +58,7 @@ public class PersonController {
 
     // Määritetään endpoint henkilön päivittämiseksi
     @PutMapping("/person/{id}")
-    public String updatePerson(@PathVariable("id") int id, @RequestParam Person person) {
+    public String updatePerson(@PathVariable("id") int id, @RequestBody Person person) {
         personService.updatePerson(id, person);
         return "data updated";
         
