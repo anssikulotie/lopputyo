@@ -1,8 +1,10 @@
-package com.lopputyo.lopputyo.data;
+package com.lopputyo.lopputyo;
 //Lisätään tarvittavat importit
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.lopputyo.lopputyo.data.Course;
+import com.lopputyo.lopputyo.data.Person;
 import com.lopputyo.lopputyo.service.CourseService;
 import com.lopputyo.lopputyo.service.PersonService;
 
